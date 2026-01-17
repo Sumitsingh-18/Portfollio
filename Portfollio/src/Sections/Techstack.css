@@ -1,0 +1,204 @@
+.orbit-section {
+  /* background: radial-gradient(circle at center, #050505 0%, #000 100%); */
+  color: white;
+  /* min-height: 100vh; */
+  padding: 100px 20px;
+  overflow: visible; /* allow full orbit visibility */
+  text-align: center;
+  position: relative;
+}
+
+.head {
+  margin-bottom: 5%;
+}
+
+.orbit-container {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  max-width: 100%;
+}
+
+/* Center Icon */
+.center-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.center-icon img {
+  width: 110px;
+  height: 110px;
+  filter: drop-shadow(0 0 18px rgba(0, 255, 255, 0.6));
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.center-icon span {
+  display: block;
+  color: #bfbfbf;
+  margin-top: 8px;
+}
+
+/* Orbit rings */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  border-radius: 50%;
+  border: 1px dashed rgba(120, 120, 120, 0.4);
+  animation: spin linear infinite;
+}
+
+.orbit-1 {
+  width: 320px;
+  height: 320px;
+  animation-duration: 40s;
+}
+
+.orbit-2 {
+  width: 500px;
+  height: 500px;
+  animation-duration: 30s;
+}
+
+.orbit-3 {
+  width: 680px;
+  height: 680px;
+  animation-duration: 50s;
+}
+
+/* Orbit Icons */
+.orbit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  text-align: center;
+  z-index: 15;
+}
+
+.orbit-icon img {
+  width: 58px;
+  height: 58px;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.orbit-icon span {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #bfbfbf;
+}
+
+.orbit-icon:hover img {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 25px rgba(0, 255, 255, 1));
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* 📱 Tablet view */
+@media (max-width: 1024px) {
+  .orbit-1 {
+    width: 250px;
+    height: 250px;
+    animation-duration: 40s;
+  }
+
+  .orbit-2 {
+    width: 380px;
+    height: 380px;
+    animation-duration: 30s;
+  }
+
+  .orbit-3 {
+    width: 520px;
+    height: 520px;
+    animation-duration: 50s;
+  }
+
+  .center-icon img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .orbit-icon img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .orbit-container {
+    height: 70vh;
+  }
+}
+
+/* 📱 Mobile view */
+@media (max-width: 600px) {
+  .orbit-section {
+    padding: 40px 0;
+    overflow: visible;
+  }
+
+  .orbit-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .orbit-container {
+    height: 55vh;
+  }
+
+  .center-icon img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .orbit-1 {
+    width: 160px;
+    height: 160px;
+    animation-duration: 40s;
+  }
+
+  .orbit-2 {
+    width: 240px;
+    height: 240px;
+    animation-duration: 30s;
+  }
+
+  .orbit-3 {
+    width: 320px;
+    height: 320px;
+    animation-duration: 50s;
+  }
+
+  .orbit-icon img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .orbit-icon span {
+    font-size: 0.7rem;
+  }
+
+  .orbit-title {
+    margin-bottom: 20px;
+  }
+}
